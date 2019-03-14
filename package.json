@@ -3,15 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "geolocation-utils": "^1.2.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.4",
+    "react-axios": "^2.0.3",
     "react-dom": "^16.8.4",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-sw": "http-server ./build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +27,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
 }
