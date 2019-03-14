@@ -8,7 +8,8 @@ class Homepage extends React.Component{
   state = {
     weather: '',
     input: '',
-    show: false
+    show: false,
+    error: false
   }
 
   getWeather = (e) => {
@@ -18,7 +19,9 @@ class Homepage extends React.Component{
     .then(res => this.setState({weather: res.data}, this.setState({
       show: true
     }, console.log(res.data)))
-    ).catch(error => console.log('ERROR', error))
+  ).catch(error => this.setState({
+    error: true
+  }))
 
   }
 
@@ -26,6 +29,7 @@ class Homepage extends React.Component{
     e.preventDefault()
     console.log(e.target.value)
     this.setState({
+      error: false,
       show: false,
       input: e.target.value
     })
@@ -39,6 +43,7 @@ class Homepage extends React.Component{
         <input onChange={this.handleInput} value={this.state.input} type='text' placeholder='city'></input>
         <input type='submit' value='submit' />
         </form>
+        {this.state.error ? `No results found for ${this.state.input}` : null}
         {this.state.show ? <DisplayWeather data={this.state.weather} /> : null}
       </div>
     )
