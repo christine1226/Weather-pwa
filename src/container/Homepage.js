@@ -18,7 +18,7 @@ class Homepage extends React.Component{
     axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.input}&units=imperial&APPID=d7c5a0840876d1cefcf371c90d2cd463`)
     .then(res => this.setState({weather: res.data}, this.setState({
       show: true
-    }, console.log(res.data)))
+    }, console.log(res)))
   ).catch(error => this.setState({
     error: true
   }))
@@ -27,11 +27,13 @@ class Homepage extends React.Component{
 
   handleInput = (e) => {
     e.preventDefault()
+    let capitalized = e.target.value.split(' ').map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(' ')
     console.log(e.target.value)
     this.setState({
       error: false,
       show: false,
-      input: e.target.value
+      input: capitalized
     })
   }
 
@@ -45,6 +47,7 @@ class Homepage extends React.Component{
         </form>
         {this.state.error ? `No results found for ${this.state.input}` : null}
         {this.state.show ? <DisplayWeather data={this.state.weather} /> : null}
+        {!this.state.show && !this.state.weather ? "hello" : null}
       </div>
     )
   }
