@@ -23,8 +23,8 @@ class DisplayWeather extends React.Component{
         <p>Temp Lows: {this.props.data ? Math.round(this.props.data.main.temp_min) : 'No Data Available'} degrees</p>
         <p>Max Temp: {this.props.data ? Math.round(this.props.data.main.temp_max) : 'No Data Available'} degrees</p>
         <p>Wind: {this.props.data ? Math.round(this.props.data.wind.speed) : 'No Data Available'}mph</p>
-          <p>Visibility: {Math.round((this.props.data.visibility)*0.000621371)} miles</p>
-
+        <p>Visibility: {Math.round((this.props.data.visibility)*0.000621371)} miles</p>
+        <a href="3-day-weather">View 3 Day Weather</a>
       </div>
     )
   }

@@ -47,7 +47,7 @@ class Homepage extends React.Component{
         </form>
         {this.state.error ? `No results found for ${this.state.input}` : null}
         {this.state.show ? <DisplayWeather data={this.state.weather} /> : null}
-        {!this.state.show && !this.state.weather ? "hello" : null}
+        {!this.state.show ? <img src='https://images.unsplash.com/photo-1534794048419-48e110dca88e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=948&q=80' alt='' /> : null}
       </div>
     )
   }
