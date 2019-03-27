@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import DisplayWeather from './DisplayWeather'
 import { withRouter } from 'react-router-dom'
-
+const API_KEY = `${process.env.REACT_APP_WEATHER_API_KEY}`
 
 class Homepage extends React.Component{
   state = {
@@ -15,7 +15,7 @@ class Homepage extends React.Component{
   getWeather = (e) => {
     e.preventDefault()
     console.log('we hit')
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.input}&units=imperial&APPID=d7c5a0840876d1cefcf371c90d2cd463`)
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.input}&units=imperial&APPID=${API_KEY}`)
     .then(res => this.setState({weather: res.data}, this.setState({
       show: true
     }, console.log(res)))
