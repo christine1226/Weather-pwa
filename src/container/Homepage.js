@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import DisplayWeather from './DisplayWeather'
 import { withRouter } from 'react-router-dom'
-const API_KEY = `${process.env.REACT_APP_WEATHER_API_KEY}`
+var API_KEY = `${process.env.REACT_APP_WEATHER_API_KEY}`
 
 class Homepage extends React.Component{
   state = {

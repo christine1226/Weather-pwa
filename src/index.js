@@ -7,6 +7,7 @@ import { Route, BrowserRouter as Router} from 'react-router-dom'
 import Homepage from './container/Homepage'
 import DisplayWeather from './container/DisplayWeather'
 
+
 const routing = (
   <Router>
     <div>
