@@ -21,7 +21,7 @@ export default class WeatherImg extends React.Component{
       }
       else if(this.props.weather === 'clear sky' && date <= 13){
         this.setState({
-          img: 'https://media.tenor.com/images/987009b80bb01fcf7b9f9a68791abd00/tenor.gif'
+          img: 'https://media.tenor.com/images/539162268b1dfb04278b1f85bf5d0aab/tenor.gif'
         })
       }
       else if(this.props.weather === 'clear sky' && date >= 13){

@@ -6,7 +6,7 @@ import Homepage from './container/Homepage'
 class App extends Component {
   render() {
     return (
-      <div >
+      <div className='everything'>
         <Homepage />
       </div>
     );
